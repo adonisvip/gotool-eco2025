@@ -6,15 +6,10 @@ import (
 	"os"
 	"time"
 
-	"github.com/joho/godotenv"
   "gotool-eco2025/handler"
 )
 
 func main() {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("Lỗi tải file .env")
-	}
 
 	timezone := os.Getenv("TIMEZONE")
 	if timezone == "" {
