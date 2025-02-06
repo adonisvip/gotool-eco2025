@@ -1,9 +1,9 @@
 version: "3.8"
 
 services:
-  eco2025_bot:
+  tuananhtest_bot:
     build: .
-    container_name: eco2025_bot
+    container_name: tuananhtest_bot
     restart: unless-stopped
     environment:
       TELEGRAM_BOT_TOKEN: ""
