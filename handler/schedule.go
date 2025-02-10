@@ -4,7 +4,6 @@ import (
   "time"
   "fmt"
   "os"
-  "strconv"
 )
 
 var savingsPlan = []int{
@@ -14,10 +13,6 @@ var savingsPlan = []int{
 	310000, 320000, 330000, 340000, 350000, 360000, 370000, 380000, 390000, 400000,
 	410000, 420000, 430000, 440000, 450000, 460000, 470000, 480000, 490000, 500000,
 	510000, 520000,
-}
-
-func formatCurrency(amount int) string {
-	return strconv.FormatInt(int64(amount), 10)
 }
 
 func ScheduleNotifications() {

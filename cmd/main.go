@@ -10,7 +10,6 @@ import (
 )
 
 func main() {
-
 	timezone := os.Getenv("TIMEZONE")
 	if timezone == "" {
 		timezone = "Asia/Bangkok"
@@ -24,6 +23,7 @@ func main() {
 	fmt.Println("Bot tiết kiệm 2025 đang chạy...")
   handler.SendStartupNotification()
 	go handler.ScheduleNotifications()
+  go handler.PollUpdates()
 
 	select {}
 }
