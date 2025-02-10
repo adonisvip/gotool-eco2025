@@ -7,14 +7,12 @@ COPY . .
 
 RUN go mod tidy
 
-RUN GOOS=linux GOARCH=amd64 go build  -o main ./cmd/main.go
+RUN CGO_ENABLED=0 go build -ldflags '-extldflags "-static"' -o main ./cmd/main.go
 
-# FROM alpine:3.19
+FROM alpine:3.19
 
-# RUN apk --no-cache add ca-certificates
+RUN apk --no-cache add ca-certificates tzdata
 
-# WORKDIR /root/
-
-# COPY --from=builder /app/main .
+COPY --from=builder /app/main ./main
 
 CMD ["./main"]
