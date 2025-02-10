@@ -26,7 +26,8 @@ func PollUpdates() {
 			continue
 		}
 
-		defer resp.Body.Close()
+		// defer resp.Body.Close()
+
 		var result struct {
 			OK      bool             `json:"ok"`
 			Updates []config.TelegramUpdate `json:"result"`
